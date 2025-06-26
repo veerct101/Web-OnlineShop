@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Page</title>
+    <style>
+        body {
+            background-image: url('bgimg2.jpg');
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+       
+        h1 {
+            color: #333;
+            padding: 20px 0;
+            align-items: center;
+        }
+        .items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .item {
+            width: 250px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 45px;
+            border-radius: 8px;
+            box-shadow: #333;
+            transition: all 0.4s;
+        }
+        .item:hover{
+            box-shadow: 0px 0px 10px rgb(0, 0, 0);
+            width: 255px;
+
+        }
+        .item img {
+            width: 100%;
+            height: 280px;
+        }
+        .price {
+            font-weight: bold;
+            color: #28a745;
+        }
+        .register {
+            margin: 30px;
+            font-size: 30px;
+            height: 60px;
+            width: 250px;
+            background-color: #3abf59;
+            align-content: center;
+            text-align: center;
+            justify-self: center;
+            border-radius: 8px;
+        }
+
+        .register a:hover {
+            background: #0056b3;
+        }
+
+        .register:hover{
+            cursor: pointer;
+            background-color: #35a44f;
+        }
+
+        .item h2{text-align: center;}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1> <center> Shopping Items</h1>
+        <a href = "">
+        <div class="items">
+            <div class="item" onclick="return clickk()">
+                <img src="pic1.jpg" alt="Item 1">
+                <h2>Vivo V40</h2>
+                <font color = "green" size = "+2"><center>Rs : 20,999</center></font>
+                 
+            </div>
+        </a>
+
+        <a href = "">
+            <div class="item" onclick="return clickk()">
+                <img src="pic2.webp" alt="Item 2">
+                <h2>Vivo T3x</h2>
+                <font color = "green" size = "+2"><center>Rs : 18,999</center></font>
+                 
+            </div>
+        </a>
+
+        <a href = "">
+            <div class="item" onclick="return clickk()">
+                <img src="pic3.jpg" alt="Item 3">
+                <h2>Oppo F27 pro+</h2>
+                <font color = "green" size = "+2"><center>Rs : 26,999</center></font>
+                 
+            </div>
+        </a>
+
+        <a href = "">
+            <div class="item" onclick="return clickk()">
+                <img src="pic4.jpg" alt="Item 4">
+                <h2>Samsung S23</h2>
+                <font color = "green" size = "+2"><center>Rs : 57,999</center></font>
+                 
+            </div>
+        </a>
+
+        <a href = "">
+            <div class="item" onclick="return clickk()">
+                <img src="pic5.jpg" alt="Item 5">
+                <h2>Samsung S23 Ultra</h2>
+                <font color = "green" size = "+2"><center>Rs : 1,20,999</center></font>
+                 
+            </div>
+        </a>
+
+        <a href = "">
+            <div class="item" onclick="return clickk()">
+                <img src="pic6.webp" alt="Item 6">
+                <h2>Redmi 13C</h2>
+                <font color = "green" size = "+2"><center>Rs : 17,999</center></font>
+                 
+            </div>
+        </a>
+        </div>
+
+        <div class="register" onclick = "window.open('registrationpage.html')" >
+            Register
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function clickk(){
+        alert('Please register first')
+        return false;
+    }
+</script>
+
+</html>

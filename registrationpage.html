@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px 550px;
+        }
+
+        .container {
+            width: 300px;
+            background: white;
+            padding: 25px 50px;
+            border-radius: 12px;
+            box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #414141;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group input {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .sub {
+            background: #63b560;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .sub:hover {
+            background: #469852;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Register</h1>
+        <form >
+            <div class="form-group">
+                <input type="text" placeholder="Full Name" id = "name">
+            </div>
+
+            <div class="form-group">
+                <input type="text" id = "email" placeholder="Email">
+            </div>
+
+            <div class="form-group">
+                <input type="text" id = "phone" placeholder="Mobile Number">
+            </div>
+
+            <div class="form-group">
+                <input type="password"  placeholder="Password" id = "pwd"> <button id = "pass">Show</button>
+            </div>
+
+            <div class="form-group">
+                <input type="password"  placeholder="Confirm Password" id = "cpwd"> <button id = "cpassword">Show</button>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="sub" value="Register" onclick="return validateEmail()">
+            </div>
+            
+        </form>
+    </div>
+
+    <script>
+        
+            document.getElementById("pass").addEventListener("click", function (event) {
+                event.preventDefault(); 
+                let ipw = document.getElementById("pwd");
+                
+                if (ipw.type === "password") {
+                    ipw.type = "text";
+                    this.innerHTML = "Hide";
+                } else {
+                    ipw.type = "password";
+                    this.innerHTML = "Show";
+                }
+            });
+            
+            document.getElementById("cpassword").addEventListener("click", function (event) {
+                event.preventDefault(); 
+                let icpw = document.getElementById("cpwd");
+            
+                if (icpw.type === "password") {
+                    icpw.type = "text";
+                    this.innerHTML = "Hide";
+                } else {
+                    icpw.type = "password";
+                    this.innerHTML = "Show";
+                }
+            });
+            
+        function validateEmail() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let ps = document.getElementById("pwd").value;
+            let cps = document.getElementById("cpwd").value;
+            let ph = document.getElementById("phone").value;
+            let pspattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+            let phonepattern = /^(?=.*\d).{10,10}$/;
+
+            let emailpattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if(name == "" || email == "" || ps == ""){
+                alert('All fields are mendatory');
+                return false;
+            }
+            else if(!pspattern.test(ps)) 
+            {alert('Password  must contain at least 1 capital and 1 small charcter and at least 1 number and length must be greater 7');
+             return false;
+            }
+            
+            else if (!emailpattern.test(email)) {
+                alert("Enter Valid email address");
+                return false;
+            } 
+            else if (!phonepattern.test(ph)) {
+                alert("Enter Valid Mobile Number");
+                return false;
+            } 
+            else if(ps!= cps) {alert('Password and Confirm Password must be same'); return false;}
+
+            else {window.open('frameset.html');return true;}
+
+            
+        }
+    </script>
+</body>
+
+</html>
